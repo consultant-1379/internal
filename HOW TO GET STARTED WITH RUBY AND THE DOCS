@@ -1,0 +1,38 @@
+Download the repo
+
+Download Ruby version 2.2.2 from archieves (http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.2.2-x64.exe for 64bit machines)
+During install, click 'Add to path' to allowe ruby be accessed from any command line
+
+Download dev kit TO A PERMANENT LOCATION (not a temp directory)(http://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe)
+
+Now to run the commands:
+
+Open the command window and run:
+ruby --version
+This will check if Ruby is installed
+
+Next, we must install the DevKit
+
+cd to location of devkit and run:
+	ruby dk.rb init
+	ruby dk.rb install
+
+
+Now, we must install the needed Gems.
+In any directory, run the following commands:
+
+gem update --system
+gem install bundler
+
+You should now be ready to go with Ruby.
+
+
+In order to build the documentation you need to cd into the internal repo, and run:
+
+bundle install
+bundle exec jekyll serve
+
+This will create the documentation and serve it up on the location specified (localhost:4000/DE/ is the location at the time of writing)
+
+
+From now on, you should only need the final two commands. Changes are automatically picked up by the server once you make them anyway so you should not need to restart.

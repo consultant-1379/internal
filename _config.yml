@@ -1,0 +1,102 @@
+# Site settings
+url: https://de.lmera.ericsson.se
+permalink: /:categories/:title/
+tags_dir: tags
+ubuntu_version: trusty
+
+# Defaults for posts
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: posts
+    values:
+      layout: page
+      weight: 50
+
+# Jekyll
+exclude:
+  - _*.json
+  - codeship.aes
+  - codeship-services.yml
+  - codeship-steps.yml
+  - bin
+  - external
+  - README.md
+  - LICENSE.md
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
+  - Guardfile
+  - Gemfile*
+  - node_modules
+  - package.json
+  - gulpfile.js
+encoding: utf-8
+#gems:
+#  - octopress-autoprefixer
+collections:
+  faq:
+    permalink: /faq/:path/
+    output: true
+
+# SASS
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Build settings
+markdown: kramdown
+
+# Kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    line_numbers: false
+
+# Prose.io
+prose:
+  rooturl: '_posts'
+  siteurl: 'https://codeship.com/documentation/'
+  media: 'images'
+  ignore:
+    - index.md
+    - _config.yml
+    - /_layouts
+    - /_includes
+  metadata:
+    _posts:
+      - name: 'layout'
+        field:
+          element: 'hidden'
+          value: 'page'
+      - name: 'title'
+        field:
+          element: 'text'
+          label: 'Page Title'
+      - name: 'categories'
+        field:
+          element: 'select'
+          label: 'Category'
+          options: 'http://codeship.com/documentation/metadata/categories.jsonp'
+      - name: 'tags'
+        field:
+            element: 'multiselect'
+            label: 'Tags'
+            placeholder: 'Choose Tags'
+            alterable: true
+            options: 'http://codeship.com/documentation/metadata/tags.jsonp'
+      - name: 'weight'
+        field:
+          element: 'number'
+          label: 'Page Weight'
+          help: 'Used for sorting subpages in listings'
+          value: 50
+
+
+# Serving
+detach:  false
+port:    4000
+host:    127.0.0.1
+baseurl: /documentation

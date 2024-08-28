@@ -1,0 +1,32 @@
+---
+---
+@import 'rig/rig';
+
+// CUSTOM VARIABLES SECTION
+
+$cMainNav:          #000000;
+$cMainNavHover:     $_cBlue;
+
+$cImg:              $_cDarkgrey;
+$cImgBorder:        $_cWhite;
+
+$cPageHeaderBorder: rgba($_cWhite, .2);
+$cPageHeader:       $_cWhite;
+$cPageHeaderBg:     $_cDarkblue;
+
+$cAsideBg:          #f3f6fb;
+
+$cFooter:           $_cWhite;
+$cFooterBg:         #101b27;
+
+$cRed:              #FE402C;
+$cBlue:             #5A95E5;
+
+@import 'docs/nav';
+@import 'docs/header';
+@import 'docs/search';
+@import 'docs/page';
+@import 'docs/rouge';
+@import 'docs/swift';
+@import 'docs/footer';
+@import 'docs/gist'

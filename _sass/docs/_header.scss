@@ -1,0 +1,172 @@
+//
+// PageHeader for the Website
+//This Element is used only once on the Website
+//
+.pageHeader {
+  width: 100%;
+  display: block;
+  z-index: map-get($mZindex, pageHeader);
+  background: $cPageHeaderBg;
+  position: fixed;
+  top: 0;
+  padding: 5px 0;
+
+  .contentWrapper {
+    text-align: right;
+    padding: $base-padding / 2 10rem $base-padding / 2 0;
+    padding-right: 10rem;
+    position: relative;
+    max-width: 1600px;
+  }
+
+  a {
+    color: $cPageHeader;
+    font-size: 1rem;
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .nav__link {
+    padding-top: 0;
+    letter-spacing: 2px;
+    position: relative;
+
+    &.has-new-badge::before {
+      content: 'NEW';
+      position: absolute;
+      color: $_cWhite;
+      background: #7ad07c;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 9px;
+      line-height: 12px;
+      left: 0;
+      top: -3px;
+      padding: 0 2px;
+      transform: translateX(-110%);
+    }
+  }
+
+  .nav--small {
+    margin-top: 4px;
+
+    .nav__link {
+      padding-bottom: 0;
+      padding-left: 2px;
+      font-size: .8rem;
+      color: #6c7c90;
+      letter-spacing: 1px;
+
+      &:hover {
+        color: $_cBlue;
+      }
+    }
+  }
+}
+
+.pageHeader__logo {
+  display: inline-block;
+  float: left;
+  vertical-align: middle;
+  padding-top: .5rem;
+  padding-left: 2rem;
+  height: 2.4rem;
+  text-align: left;
+
+  img {
+    height: 2.4rem;
+  }
+
+  a {
+    display: block;
+  }
+}
+
+.pageHeader__signup {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-left: $base-padding;
+  height: 100%;
+  width: 9rem;
+
+  .btn {
+    padding: .7em 1em;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: $base-padding;
+    transform: translateY(-50%);
+    font-size: .8rem;
+  }
+}
+
+.pageHeader__mobile {
+  @media only screen and (min-width: $bpMedium) {
+    display: none !important;
+  }
+  padding: 0 !important;
+
+  h1 {
+    position: absolute;
+  }
+
+  .pageHeader__logo {
+    padding-top: 0;
+  }
+
+  .btn--mobileMenu {
+    @extend .btn--clean;
+    width: 2rem;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 0;
+    color: $_cWhite;
+    background: none;
+    transform: translateY(50%);
+
+    &:hover {
+      background: transparent;
+      color: $cPageHeaderBg;
+    }
+
+    &:active,
+    &:focus {
+      background: transparent;
+    }
+  }
+
+  .nav--mobileMenu {
+    width: 100%;
+    clear: both;
+    display: none;
+
+    .btn {
+      margin: 0;
+      padding: .5rem 1rem;
+    }
+
+    ul {
+      padding: 0 1rem;
+    }
+
+    li {
+      display: block;
+
+      &:first-child {
+        padding-top: 1rem;
+      }
+
+      &:last-child {
+        padding-bottom: 1rem;
+      }
+
+      a { padding: .2rem 0;}
+    }
+  }
+}

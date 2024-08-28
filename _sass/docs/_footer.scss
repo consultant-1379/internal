@@ -1,0 +1,41 @@
+.pageFooter {
+  background: $cFooterBg;
+  color: $cFooter;
+  font-size: .8em;
+  padding: 1em 0;
+  position: relative;
+  margin-top: 4rem;
+  z-index: 1;
+
+  .contenWrapper {
+    max-width: 68rem;
+  }
+
+  .nav {
+    a { color: $cFooter;
+      font-size: .7em;}
+  }
+
+  img {
+    max-height: 3rem;
+  }
+}
+
+.copyright {
+  p {
+    font-size: .9rem;
+  }
+}
+
+.scriptIncludes {
+  img {
+    position: absolute;
+  }
+}
+
+.specialSiteLinks a {
+  font-size: .8rem;
+  padding: $base-padding / 3 $base-padding / 2;
+  text-decoration: underline;
+  margin: 0 0 0 .5rem;
+}

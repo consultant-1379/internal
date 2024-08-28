@@ -1,0 +1,11 @@
+# Project
+.sass-cache
+_site
+codeship.aes
+deployment.env
+dockercfg
+node_modules
+
+# OS & editors
+.DS_Store
+*.codekit
